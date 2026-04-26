@@ -3,13 +3,10 @@ import Image from "next/image";
 import useSound from "use-sound";
 
 export default function Home() {
-  const [easteregg, { sound }] = useSound('/soundeffects/witnesstestimony.mp3', {volume: 0.25});
+  const [easteregg, { sound }] = useSound('/soundeffects/objection.wav', {volume: 0.25});
 
   const handleEasterEggButton = () => {
     easteregg();
-    setTimeout(() => {
-      sound?.stop();
-    }, 1000);
   }
 
   return (
@@ -54,7 +51,7 @@ export default function Home() {
             {/* container */}
             <p>
               I'm currently a full stack developer at{" "}
-            <a className="transition duration-500 ease-in-out hover:text-green-500 underline" href="https://www.dssedu.com/">
+            <a className="transition duration-500 ease-in-out hover:text-green-500 underline" href="https://www.dssedu.com/" target="_blank">
               Dynamic Support Solutions
             </a>
               , where I work on their financial tool that brings school financials into a much easier viewing experience for all user groups.
@@ -67,34 +64,54 @@ export default function Home() {
             {/* may or may not need this container */}
             <p>
               Aside from my work, I've also done personal projects such as a{" "}
-            <a>
+            <a target="_blank">
               text-based game
             </a>
             , a{" "}
-            <a>
+            <a target="_blank">
               task tracker tool
             </a>
             , and I'm currently working on a{" "}
-            <a>
+            <a target="_blank">
               2D-pixel adventure game
             </a>
               . These experiences have shaped how I approach building products that are clean and usable. 
             </p>
           </div>
                     
-          <div className="">
+          <div className="text-black">
             {/* container */}
             <p>
               In my spare time, you can either catch me watching anime, hanging out with friends, or having a{" "}
 
             <button 
-              className="transition-all duration-500 hover:bg-gradient-to-r hover:from-blue-500 hover:to-red-500 hover:bg-clip-text hover:text-transparent" 
+              className="hover:text-blue-400 transition duration-500"
               onClick={handleEasterEggButton}
             >
-              turnabout in the courtroom
+              turnabout in the classroom
             </button>
               .
             </p>
+          </div>
+           
+
+          <div className="grid grid-cols-2">
+             {/* button navigation container */}
+             <div className="col-span-1 relative">
+                <button 
+                className="p-2 w-40 bg-green-300 transition duration-500 hover:bg-green-500 absolute right-2 rounded-xl"
+                >
+                  <a href="/about-me">More about me</a>
+                </button>
+             </div>
+
+              <div className="col-span-1 relative">
+                <button 
+                className="p-2 w-40 bg-green-300 transition duration-500 hover:bg-green-500 absolute left-2 rounded-xl"
+                >
+                  Projects directory
+                </button>
+             </div>
           </div>
         </div>
       </div>
